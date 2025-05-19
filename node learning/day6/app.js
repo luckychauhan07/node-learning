@@ -22,6 +22,7 @@ app.get("/add-home", (req, res, next) => {
 });
 app.post("/add-home", (req, res, next) => {
     console.log(req.url, req.method, req.body);
+    ś;
     res.send(`<h1>home is register successfully to airbnb</h1>
       <a href="/">go to home</a> 
   `);
