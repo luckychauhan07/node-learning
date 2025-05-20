@@ -1,3 +1,5 @@
+// CORE MODULES
+const path = require("path");
 // EXTERNAL MODULES
 const express = require("express");
 // LOCAL MODULES
@@ -11,7 +13,7 @@ app.use("/host", hostRouter);
 
 // THE 404 REQEST IS ALWAYS LAST
 app.use((req, res, next) => {
-    res.status(404).send(`<h1>404 your page is not found on airbnb</h1>`);
+    res.sendFile(path.join(__dirname, "views", "404page.html"));
 });
 // SERVER LISTENING
 const PORT = 3000;
