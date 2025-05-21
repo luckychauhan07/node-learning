@@ -4,7 +4,8 @@ const path = require("path");
 const express = require("express");
 // LOCAL MODULES
 const userRouter = require("./routes/userRouter");
-const hostRouter = require("./routes/hostRouter");
+const hostRouter = require("./routes/hostRouter"); //
+const rootPath = require("./utils/pathUtil");
 
 const app = express();
 app.use(express.urlencoded());
@@ -13,7 +14,7 @@ app.use("/host", hostRouter);
 
 // THE 404 REQEST IS ALWAYS LAST
 app.use((req, res, next) => {
-    res.sendFile(path.join(__dirname, "views", "404page.html"));
+    res.sendFile(path.join(rootPath, "views", "404page.html"));
 });
 // SERVER LISTENING
 const PORT = 3000;
